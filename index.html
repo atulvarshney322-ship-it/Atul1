@@ -213,13 +213,13 @@
               </div>
               <div class="details position-relative">
                 
-                <a href="#about" class="stretched-link" id="openPopup1">
+                <a href="#about" class="stretched-link" id="openPopup2">
                   <h3>5-7 BR Villas</h3>
                 </a>
                 <h4>On Request</h4>
                 <h4>(Carpet Area)</h4>
                 <br>
-                <a href="#about" class="btn-get-started" id="openPopup1">Check Price</a>
+                <a href="#about" class="btn-get-started" id="openPopup2">Check Price</a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -891,6 +891,7 @@
     const overlay = document.getElementById('popupOverlay');
     const openLink = document.getElementById('openPopup');
     const openLink1 = document.getElementById('openPopup1');
+    const openLink2 = document.getElementById('openPopup2');
     const closeBtn = document.getElementById('closeBtn');
 
     // === Show popup on page load ===
@@ -904,6 +905,11 @@
       overlay.style.display = 'flex';
     });
     openLink1.addEventListener('click', (e) => {
+      e.preventDefault();
+      overlay.style.display = 'flex';
+    });
+
+    openLink2.addEventListener('click', (e) => {
       e.preventDefault();
       overlay.style.display = 'flex';
     });
