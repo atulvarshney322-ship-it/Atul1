@@ -10,7 +10,10 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Fonts -->
-
+ <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
   
 
   <!-- Vendor CSS Files -->
@@ -22,8 +25,56 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/faq.css" rel="stylesheet">
   <link href="assets/css/form.css" rel="stylesheet">
- 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<style>
+  .hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.7; /* optional, to darken or soften video background */
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.btn-get-started {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-get-started:hover {
+  background-color: #1e40af;
+}
+.hero.section.dark-background::before {
+    content: none; /* Removes overlay pseudo-element */
+}
+
+</style>
 </head>
 
 <body class="index-page">
@@ -42,11 +93,16 @@
           <li><a href="#about">Project Highlights</a></li>
           <li><a href="#services">Plans & Pricing</a></li>
           <li><a href="#features">Connectivity</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#portfolio">Amenities</a></li>
           
           
           <li><a href="#contact">Contact</a></li>
           <li>+971-553693786</li>
+          
+           <li><a href="https://www.facebook.com/DAMACPropertiesOfficial/" target="_blank"><i class="bi bi-facebook" style="font-size: 30px;"></i></a></li>
+           <li><a href="https://www.instagram.com/damacofficial/#" target="_blank"><i class="bi bi-instagram" style="font-size: 30px;"></i></a></li>
+           <li><a href="https://www.linkedin.com/company/damac-properties" target="_blank"><i class="bi bi-linkedin" style="font-size: 30px;"></i></a></li>
+          
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -59,24 +115,28 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/Untitled.gif" alt="" data-aos="fade-in">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="hero-video" data-aos="fade-in">
+    <source src="assets/img/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-      <div class="container d-flex flex-column align-items-center">
-        
-        <h4 data-aos="fade-up" data-aos-delay="100">DAMAC</h4>
-        <h2 data-aos="fade-up" data-aos-delay="100">Islands</h2>
-        <p data-aos="fade-up" data-aos-delay="200">At Dubailand</p>
-        <p data-aos="fade-up" data-aos-delay="200">(NEW LAUNCH PHASE 2)</p>
-        <p data-aos="fade-up" data-aos-delay="200">Live the Island State of Mind</p>
-        <p data-aos="fade-up" data-aos-delay="200">Premium Villas and townhouses</p>
-        <p data-aos="fade-up" data-aos-delay="200">Starting Price: 2.5 M*</p>
-        <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="#about" class="btn-get-started" id="openPopup">Get Started</a>
-          <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-        </div>
-      </div>
+  <div class="container d-flex flex-column align-items-center" style="opacity: 1;">
+    <h3 data-aos="fade-up" data-aos-delay="100" style="color: #fff;font-family: Aptos Slab Light;">DAMAC</h3>
+    <h2 data-aos="fade-up" data-aos-delay="100" style="color: #fff; font-family: Aptos Slab Light;">Islands</h2>
+    <p data-aos="fade-up" data-aos-delay="200" style="font-family: Aptos Slab Light;"><b>At Dubailand</b></p>
+    <p data-aos="fade-up" data-aos-delay="200" style="font-family: Aptos Slab Light;"><b>(NEW LAUNCH PHASE 2)</b></p>
+    <p data-aos="fade-up" data-aos-delay="200" style=" font-size: 45px; font-family: Aptos Slab Light;"><b></b>Live the Island State of Mind</b></p>
+    <p data-aos="fade-up" data-aos-delay="200" style="font-family: Aptos Slab Light;"><b>Premium Villas and townhouses</b></p>
+    <p data-aos="fade-up" data-aos-delay="200" style="font-family: Aptos Slab Light;"><b>Starting Price: 2.5 M*</b></p>
+    <p data-aos="fade-up typing-text" id="typing" data-aos-delay="200"></p>
+    <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+      <a href="#about" class="btn-get-started" id="openPopup">Get Started</a>
+    </div>
+  </div>
 
-    </section><!-- /Hero Section -->
+</section>
+<!-- /Hero Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -87,19 +147,14 @@
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3>Project Highlights</h3>
             <img src="assets/img/gal02.webp" class="img-fluid rounded-4 mb-4" alt="">
-            <p>Damac Islands</p>
-            <p>DAMAC Islands is an exclusive waterfront development located in Dubai, UAE, nestled in one of the city’s most sought-after coastal areas. This luxurious destination offers stunning views of the Arabian Gulf and is strategically positioned for easy access to major landmarks such as Dubai Marina, Palm Jumeirah, and JBR. With its close proximity to Sheikh Zayed Road, residents enjoy convenient access to Dubai’s key destinations, business districts, and leisure hubs.</p>
+            
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-            <div class="content ps-0 ps-lg-5">
-              
-              
-              <p>DAMAC Properties, established in 2002, is a leading developer in the Middle East's luxury real estate sector. Renowned for delivering high-end residential, commercial, and leisure properties, the company has expanded its portfolio across key global markets, including the UAE, Saudi Arabia, Qatar, Jordan, Lebanon, the Maldives, Canada, and the United Kingdom. Known for its iconic and sophisticated developments, DAMAC has set a benchmark in the industry by creating opulent living spaces, world-class shopping destinations, and leisure facilities. The company has partnered with some of the most prestigious global brands, including Versace, Fendi, and Bugatti, to bring exceptional design and craftsmanship to its properties. With a commitment to quality and innovation, DAMAC has cemented its reputation as a leader in luxury real estate, continually pushing the boundaries of what modern living and luxury experiences should be.</p>
+            <div class="content ps-0 ps-lg-5" style="text-align: center;padding-top: 20%;">
+              <p>Damac Islands</p>
+            <p>DAMAC Islands is an exclusive waterfront development located in Dubai, UAE, nestled in one of the city’s most sought-after coastal areas. This luxurious destination offers stunning views of the Arabian Gulf and is strategically positioned for easy access to major landmarks such as Dubai Marina, Palm Jumeirah, and JBR. With its close proximity to Sheikh Zayed Road, residents enjoy convenient access to Dubai’s key destinations, business districts, and leisure hubs.</p>
             <p>The design of DAMAC Islands focuses on contemporary architecture, with a strong emphasis on luxurious waterfront living. The residences, including villas and townhouses, are crafted to showcase modern aesthetics and functionality, featuring expansive floor-to-ceiling windows that provide breathtaking, unobstructed sea views.</p>
-              <div class="position-relative mt-4">
-                <img src="assets/img/gal04.webp" class="img-fluid rounded-4" alt="">
-                <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="glightbox pulsating-play-btn"></a>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -132,12 +187,13 @@
               </div>
               <div class="details position-relative">
                 
-                <a href="#about" class="stretched-link" id="openPopup">
+                <a href="#about" class="stretched-link" id="openPopup1">
                   <h3>4-5 BR Townhouses</h3>
                 </a>
                 <h4>AED 2.75 M* - 3.75 M*</h4>
                 <h4>(Carpet Area)</h4>
-                <a href="#about" class="btn-get-started" id="openPopup">Check Price</a>
+                <br>
+                <a href="#about" class="btn-get-started" id="openPopup1">Check Price</a>
                 
               </div>
             </div>
@@ -150,12 +206,13 @@
               </div>
               <div class="details position-relative">
                 
-                <a href="#about" class="stretched-link" id="openPopup">
+                <a href="#about" class="stretched-link" id="openPopup1">
                   <h3>5-7 BR Villas</h3>
                 </a>
                 <h4>On Request</h4>
                 <h4>(Carpet Area)</h4>
-                <a href="#about" class="btn-get-started" id="openPopup">Check Price</a>
+                <br>
+                <a href="#about" class="btn-get-started" id="openPopup1">Check Price</a>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -298,126 +355,15 @@
     </section><!-- /Features Section -->
 
   
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section dark-background">
-
-      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Amit</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Reviewers of Savvy International Realtors LLC in Dubai highlight the company's customer-centric approach, reliability, and professionalism. Reviews frequently praise the staff for being trustworthy and knowledgeable. </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Amit</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Reviewers of Savvy International Realtors LLC in Dubai highlight the company's customer-centric approach, reliability, and professionalism. Reviews frequently praise the staff for being trustworthy and knowledgeable. </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Amit</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Reviewers of Savvy International Realtors LLC in Dubai highlight the company's customer-centric approach, reliability, and professionalism. Reviews frequently praise the staff for being trustworthy and knowledgeable. </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Amit</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Reviewers of Savvy International Realtors LLC in Dubai highlight the company's customer-centric approach, reliability, and professionalism. Reviews frequently praise the staff for being trustworthy and knowledgeable.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>Amit</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Reviewers of Savvy International Realtors LLC in Dubai highlight the company's customer-centric approach, reliability, and professionalism. Reviews frequently praise the staff for being trustworthy and knowledgeable.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
+    
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>CHECK OUR PORTFOLIO</p>
+        <h2>Amenities</h2>
+        <p>Amenities</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -574,6 +520,195 @@
 
     </section><!-- /Portfolio Section -->
 
+<!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section dark-background">
+
+      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Amit</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Reviewers of Savvy International Realtors LLC in Dubai highlight the company's customer-centric approach, reliability, and professionalism. Reviews frequently praise the staff for being trustworthy and knowledgeable. </span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Amit</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Reviewers of Savvy International Realtors LLC in Dubai highlight the company's customer-centric approach, reliability, and professionalism. Reviews frequently praise the staff for being trustworthy and knowledgeable. </span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Amit</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Reviewers of Savvy International Realtors LLC in Dubai highlight the company's customer-centric approach, reliability, and professionalism. Reviews frequently praise the staff for being trustworthy and knowledgeable. </span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Amit</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Reviewers of Savvy International Realtors LLC in Dubai highlight the company's customer-centric approach, reliability, and professionalism. Reviews frequently praise the staff for being trustworthy and knowledgeable.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>Amit</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Reviewers of Savvy International Realtors LLC in Dubai highlight the company's customer-centric approach, reliability, and professionalism. Reviews frequently praise the staff for being trustworthy and knowledgeable.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+<div class="faq-container">
+    <h2></h2>
+    <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>FAQ</h2>
+        <p>FAQ</p>
+      </div><!-- End Section Title -->
+    <div class="accordion" id="faqAccordion">
+      <!-- Item 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+           What is the status of the project?
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            
+           DAMAC Islands is an off-plan project featuring townhouses and villas in Dubailand. 
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+            What are the offered unit types?
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            
+            DAMAC Islands will offer a selection of 4 and 5-bedroom townhouses, and 6 and 7-bedroom villas. 
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+            What are the things to do in the neighbourhood?
+          </button>
+        </h2>
+        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            
+            DAMAC Islands offers its residents a range of island-inspired amenities creating a paradise of relaxation and adventure. 
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+            Which are the closest shopping malls?
+          </button>
+        </h2>
+        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            
+            Residents can access the The Ranches Souk which offers a selection of shopping and dining options.
+
+The closest shopping mall is the The Village Community Mall (10 mins).
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -587,7 +722,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
-          <div class="col-lg-12 ">
+          <div class="col-lg-6 ">
             <div class="row gy-4">
 
               <div class="col-lg-12">
@@ -614,6 +749,13 @@
                 </div>
               </div><!-- End Info Item -->
 
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row gy-4">
+              <a href="https://maps.app.goo.gl/utJpgqZNmatt2QgW7" target="_blank">
+              <img src="assets/img/map.jpeg" class="testimonial-img" alt="" style="height: 100%; width: 100%;">
+              </a>
             </div>
           </div>
 
@@ -651,7 +793,8 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
+<!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
@@ -664,25 +807,38 @@
       <h2 style="color: white;">Contact Us</h2>
       
       <form action="sendmail.php" method="POST">
-        <input type="number" name="phoneno" placeholder="Your Phone No" required />
+        <input type="text" name="name" placeholder="Your Full Name" required />
+        <input type="number" name="phoneno" id="phone" placeholder="Your Phone No" required />
         <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="city" placeholder="Your city" required />
         <button type="submit" name="send">Send Message</button>
       </form>
     </div>
   </div>
-
+ <style>
+    /* 🔴 Make country names red in dropdown */
+    .iti__country-name {
+      color: black !important;
+      font-weight: 500;
+    }
+  </style>
   <script>
     const overlay = document.getElementById('popupOverlay');
     const openLink = document.getElementById('openPopup');
+    const openLink1 = document.getElementById('openPopup1');
     const closeBtn = document.getElementById('closeBtn');
 
     // === Show popup on page load ===
     window.addEventListener('load', () => {
-      setTimeout(() => overlay.style.display = 'flex', 500);
+      setTimeout(() => overlay.style.display = 'flex', 5000);
     });
 
     // === Show popup when clicking the link ===
     openLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      overlay.style.display = 'flex';
+    });
+    openLink1.addEventListener('click', (e) => {
       e.preventDefault();
       overlay.style.display = 'flex';
     });
@@ -697,6 +853,29 @@
       if (e.target === overlay) overlay.style.display = 'none';
     });
   </script>
+  <script>
+  const input = document.querySelector("#phone");
+  window.intlTelInput(input, {
+    initialCountry: "in",
+    preferredCountries: ["in", "us", "gb", "ae"],
+    separateDialCode: true,
+  });
+</script>
+<script>
+  const text = "November 1st Week Booking Event 4000 Units Approx";
+  const typingElement = document.getElementById("typing");
+  let index = 0;
+
+  function type() {
+    if(index < text.length) {
+      typingElement.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(type, 100); // 100ms delay per character
+    }
+  }
+
+  window.onload = type; // Page load hote hi start ho jaye
+</script>
 </body>
 
 </html>
